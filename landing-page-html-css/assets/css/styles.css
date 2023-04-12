@@ -1,0 +1,467 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #011A28;
+    --white-color: #ffff;
+    --gap: 30px;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family:'Open Sans', sans-serif;;
+    font-size: 2rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--white-color);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.menu-aside {
+    background: var(--white-color);
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    z-index: 2;
+    border-bottom: 1px solid grey;
+}
+
+.menu-div {
+    height: 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.menu-div h1 {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.menu-div h1 a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 2.6rem;
+}
+
+.menu-aside .menu-div ul {
+    gap: var(--gap);
+    display: flex;
+    list-style-type: none;
+}
+
+.menu-aside .menu-div ul li a {
+    position: relative;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 1.8rem;
+}
+
+.intro-content {
+    position: relative;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    margin: 0 auto;
+    max-width: 120rem;
+    min-height: 100vh;
+    padding: 100px 30px;
+    gap: var(--gap);
+}
+
+.intro-img {
+    max-width: 100%;
+}
+
+.intro-text {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.intro-text h2 {
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    line-height: 1.2;
+}
+
+h2 {
+    text-transform: uppercase;
+    color: var(--white-color);
+    font-size: 6rem;
+}
+
+.intro-text p {
+    margin-bottom: 3rem;
+}
+
+p {
+    color: var(--white-color);
+    font-size: 2rem;
+    margin-bottom: 3rem;
+}
+
+section {
+    min-height: 100vh;
+    background: #ffff;
+}
+
+.bg {
+    background-image: url(/assets/img/flat-mountains.png);
+    background-position: center center;
+    background-size: cover;
+}
+
+.main1 .news h2 {
+    line-height: 1.2;
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 50px;
+}
+
+.main1 .news p {
+    color: var(--primary-color);
+    margin-bottom: 50px;
+}
+
+
+.news {
+    padding: 100px 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 90rem;
+    min-height: 100vh;
+    width: auto;
+    color: var(--primary-color);
+}
+
+@media (max-width: 800px) {
+    .intro-content {
+    grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width:800px) {
+    .main1 .news h2 {
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 800px) {
+    h2 {
+        font-size: 4rem;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 800px) {
+    h3 {
+        font-size: 3rem;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 800px) {
+    p {
+        font-size: 2rem
+    }
+}
+
+.gen-grid {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+}
+
+@media (max-width: 800px) {
+    .gen-grid .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 800px) {
+    .gen-grid {
+        display: block;
+    }
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap);
+    max-width: 100%;
+    counter-reset: grid-counter;
+}
+
+.main-content {
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 100px 30px;
+}
+
+.grid h3 {
+    font-size: 4rem;
+    position: relative;
+    padding-left: 5rem;
+    padding-bottom: 2rem;
+}
+
+.grid h3::before {
+    counter-increment: grid-counter;
+    content: counter(grid-counter);
+    position: absolute;
+    font-size: 9rem;
+    font-style: italic;
+    top: -4rem;
+    left: -2rem;
+    transform: rotate(5deg);
+}
+
+h3 {
+    font-size: 3rem;
+}
+
+.my-grid {
+    margin-bottom: 100px;
+}
+
+.menu-aside .menu-div ul li a::after {
+    content: '';
+    position: absolute;
+    top: 3rem;
+    left: 50%;
+    width: 0;
+    height: 0.2rem;
+    background: red;
+    transition: all 300ms ease-in-out
+}
+
+.menu-aside .menu-div ul li a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.gallery-title h2,
+.gallery-title p {
+    color: var(--primary-color);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap);
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.gallery-img {
+    width: 100%;
+    max-width: 36rem;
+    max-height: 36rem;
+    overflow: hidden;
+}
+
+.gallery-img img {
+    transition: all 300ms ease-in-out;
+}
+
+.gallery-img img:hover {
+    transform: translate(-3rem, 0) scale(1.2) rotate(5deg);
+}
+
+.pricing-table {
+    min-height: 100vh;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    text-align: center;
+    max-width: 90rem;
+}
+
+.pricing-table h2 {
+    color: var(--primary-color);
+    margin-bottom: 30px;
+}
+
+.pricing-table p {
+    color: var(--primary-color);
+}
+
+table {
+    text-align: left;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table td, table th{
+    padding: 1rem;
+    border: solid black 1px;
+}
+
+caption {
+    font-size: 1.6rem;
+    text-align: left;
+    font-style: italic;
+}
+
+tfoot td, thead th{
+    background: lightgrey;
+}
+
+.content2 {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    align-items: center;
+    gap: var(--gap);
+}
+
+.contact-form {
+    color: var(--white-color);
+    grid-column: span 2;
+    max-width: 100%;
+}
+
+.contact-form .form-grid{
+    border: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap);
+}
+
+.form-group {
+    min-width: 32rem;
+    flex: 1 1 320px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.form-group input,
+.form-group textarea {
+    border: none;
+    background: var(--white-color);
+    width: 100%;
+    padding: 1.5rem 2rem;
+}
+
+legend {
+    margin-bottom: 10px;
+}
+
+body .full-width {
+    flex: 1 1 100%;
+}
+
+.form-group button {
+    border: 0.2rem solid var(--white-color);
+    background: none;
+    color: var(--white-color);
+    padding: 1.5rem 2rem;
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+.form-group button:hover {
+    background: var(--white-color);
+    color: var(--primary-color);
+    transition: all 300ms ease-in-out;
+}
+
+.form-group ::placeholder {
+    font-size: 2rem;
+}
+
+@media (max-width: 800px) {
+    .content2 {
+        grid-template-rows: 1fr;
+    }
+}
+
+footer p {
+    padding: 10px;
+    text-align: center;
+    color: #444;
+    margin-bottom: 0px;
+}
+
+span {
+    color: red;
+}
+
+@media (max-width: 800px) {
+    .menu-div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 100vh;
+        gap: 30px;
+    }
+    .menu-aside .menu-div ul {
+        gap: var(--gap);
+        display: flex;
+        flex-direction: column;
+        list-style-type: none;
+    }
+    .menu-aside {
+        display: none;
+    }
+
+    .close-menu {
+        display: none;
+    }
+
+    .close-menu-label::after {
+        content: '≡';
+        position: fixed;
+        z-index: 3;
+        top: 2rem;
+        right: 2rem;
+        font-size: 3rem;
+        line-height: 3rem;
+        text-align: center;
+        padding: 0.5rem;
+        background: var(--primary-color);
+        color: var(--white-color);
+        width: 3rem;
+        height: 3rem;
+        cursor: pointer;
+    }
+    .close-menu:checked~.menu-aside {
+        display: block;
+    }
+    .close-menu:checked~.close-menu-label::after {
+        content:'x';
+    }
+}
+
+.back-to-top {
+    display: flex;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: var(--white-color);
+    color: var(--primary-color);
+    text-decoration: none;
+    padding: 1rem;
+    border-radius: 50%;
+    width: 5rem;
+    height: 5rem;
+    justify-content: center;
+    transform: rotate(180deg);
+    border: 1px solid lightgrey;
+}
